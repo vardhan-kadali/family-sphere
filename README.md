@@ -1,11 +1,38 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# FamilySphere 🛡️ – Private Family Network
 
-  <h1>Built with AI Studio</h2>
+FamilySphere is a high-end, private-access social network designed to protect and preserve family legacies. Unlike public platforms, FamilySphere is invite-only, ad-free, and encrypted for family peace of mind.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 🚀 Core Technologies
+- **Frontend**: Next.js, TypeScript, Tailwind CSS, Lucide.
+- **AI Engine**: Google Gemini API (AI Historian for summaries & captions).
+- **Backend (Architecture)**: Node.js/Express with WebSocket (Socket.io) support.
+- **Database**: PostgreSQL with Prisma ORM.
+- **Real-Time**: Integrated chat and live feed updates.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## ✨ Key Features
+- **3-Column Social Layout**: Familiar yet focused on private connections.
+- **AI Historian**: Automatically summarizes family activity and describes photos.
+- **Vault Identity**: Secure profile management for all family members.
+- **The Archives**: Advanced gallery management for family milestones.
+- **Direct Messaging**: Private real-time 1:1 chat between relatives.
+- **Gatherings**: RSVP-driven event system for birthdays and reunions.
+- **Admin HQ**: Centralized control for the "Family Founder" to manage access.
 
-</div>
+## 🛠️ Local Setup
+1. **API Key**: Ensure you have a Google Gemini API Key.
+2. **Environment**:
+   ```bash
+   export API_KEY=your_gemini_key
+   ```
+3. **Run**:
+   - The app uses `localStorage` as a mock database (`services/mockDb.ts`) for immediate evaluation.
+   - For production, connect the `schema.sql` to a PostgreSQL instance.
+
+## 🐳 Docker Deployment
+```bash
+docker-compose up --build
+```
+
+---
+*Preserving the moments that matter most.*

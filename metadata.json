@@ -1,0 +1,8 @@
+{
+  "name": "FamilySphere",
+  "description": "A high-end, private family social network with real-time messaging, group dynamics, and AI-powered family history tracking.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

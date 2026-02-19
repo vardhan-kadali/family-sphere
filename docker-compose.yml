@@ -1,0 +1,40 @@
+
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: familyconnect_db
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
+      POSTGRES_DB: familyconnect
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: familyconnect_api
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-password}@db:5432/familyconnect
+      JWT_SECRET: ${JWT_SECRET:-supersecret}
+      API_KEY: ${API_KEY}
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build: .
+    container_name: familyconnect_ui
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+
+volumes:
+  postgres_data:
